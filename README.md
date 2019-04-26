@@ -1,6 +1,8 @@
 # discourse-reflexivity
 A plugin to support Reflective Learning using Discourse as a knowledge management platform
 
+Developed by AHSN NENC
+
 ------
 
 ## Installation

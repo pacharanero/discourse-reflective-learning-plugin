@@ -8,11 +8,6 @@ module ::Reflexivity
 
     reflexivity_require 'models/reflection.rb'
 
-    if !Reflection.respond_to?(:title)
-      require Rails.root.join('plugins', 'discourse-reflective-learning-plugin', 'db', 'migrate', 'create_reflection_table')
-      CreateReflectionTable.new.up # <-- this runs the migration
-    end
-
     config.after_initialize do
 
       # add a per-user enable switch (not working)

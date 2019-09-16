@@ -1,5 +1,5 @@
 # name: discourse-reflexivity
-# about: reflective learning system plugin for Discourse
+# about: Reflective learning plugin for Discourse
 # version: 0.1.0
 # authors: pacharanero
 # url: https://github.com/pacharanero/discourse-reflective-learning-plugin

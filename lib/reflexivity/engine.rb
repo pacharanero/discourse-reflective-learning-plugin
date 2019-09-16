@@ -2,6 +2,17 @@ module ::Reflexivity
   class Engine < ::Rails::Engine
     engine_name Reflexivity
 
+    def reflexivity_require(path)
+      require Rails.root.join('plugins', 'discourse-reflective-learning-plugin', 'app', path).to_s
+    end
+
+    reflexivity_require 'models/reflection.rb'
+
+    if !Reflection.respond_to?(:title)
+      require Rails.root.join('plugins', 'discourse-reflective-learning-plugin', 'db', 'migrate', 'create_reflection_table')
+      CreateReflectionTable.new.up # <-- this runs the migration
+    end
+
     config.after_initialize do
 
       # add a per-user enable switch (not working)
@@ -9,6 +20,8 @@ module ::Reflexivity
       # User.register_custom_field_type('enable_reflexivity', :boolean)
 
       # see lib/plugin/instance.rb for the methods available in this context
+
+
     end
   end
 end

@@ -2,3 +2,6 @@ plugins:
   reflexivity_enabled:
     default: true
     client: true
+  reflexivity_extra_setting:
+    default: true
+    client: true

@@ -1,0 +1,15 @@
+<!-- Inserts Reflexivity tab into User Profile Main Nav-->
+<section class="user-primary-navigation">
+{{#mobile-nav class='main-nav' desktopClass="nav nav-pills user-nav" currentPath=currentPath}}
+
+{{#if siteSettings.reflexivity_enabled}}
+  <li>
+    {{#link-to 'userReflection'}}
+    {{d-icon "glasses"}}
+    {{ "Reflection" }}
+    {{/link-to}}
+  </li>
+{{/if}}
+
+{{/mobile-nav}}
+</section>

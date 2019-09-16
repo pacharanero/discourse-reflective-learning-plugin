@@ -1,3 +1,6 @@
 en:
   js:
     reflexivity:
+    user:
+      reflection:
+        create_button_text: "Create Reflection"

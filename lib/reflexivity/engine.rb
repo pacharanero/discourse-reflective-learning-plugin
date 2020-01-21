@@ -15,8 +15,10 @@ module ::Reflexivity
       # User.register_custom_field_type('enable_reflexivity', :boolean)
 
       # see lib/plugin/instance.rb for the methods available in this context
-
-
+      
+      ::User.class_eval do
+        has_many :reflections, dependent: :destroy
+      end
     end
   end
 end

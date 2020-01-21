@@ -1,16 +1,18 @@
-Reflection
-
-Reflection
-
-Reflection
-
-Reflection
-
-
-
 {{d-button
   class="btn btn-default"
   label="user.reflection.create_button_text"
   icon="glasses"
-  action="createReflection"
-}}
+  action="createReflection"}}
+
+{{#if showReflectionCompose}}
+  {{d-input value=reflection.title }}
+  {{d-editor
+    tabindex="1"
+    value=reflection.body
+    placeholder=(i18n 'reflection.placeholder')}}
+{{/if}}
+
+{{#each model as |reflection|}}
+  <div>{{reflection.title}}</div>
+  <div>{{reflection.body}}</div>
+{{/each}}

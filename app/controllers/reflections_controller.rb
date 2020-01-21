@@ -1,5 +1,19 @@
-class ReflectionsController < ApplicationController
+class ReflectionsController < ::ApplicationController
   def index
-    render json: { title: "reflection title", description: "reflection description" }
+    user = User.where(username: params[:username])
+    reflections = (user.present? && user.reflections.any?) ? user.reflections : []
+    render_serialized(reflections, ReflectionSerializer)
+  end
+  
+  def create
+    
+  end
+  
+  def update
+    
+  end
+  
+  def destroy
+    
   end
 end

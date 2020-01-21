@@ -4,3 +4,5 @@ en:
     user:
       reflection:
         create_button_text: "Create Reflection"
+        title_placeholder: "Reflection title"
+        body_placeholder: "Reflection body"

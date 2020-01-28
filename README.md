@@ -1,19 +1,15 @@
 # discourse-reflexivity
 A plugin to support Reflective Learning, using Discourse as a knowledge management platform
+More information is here: https://thepavilion.io/t/discourse-reflective-learning-plugin/1732
 
-Developed by AHSN NENC
+Maintainer: Marcus Baw (pacharanero)
+Funded by: Louise Wilson of NENC AHSN
 
 ------
 
 ## Installation
 Follow [Install a Plugin](https://meta.discourse.org/t/install-a-plugin/19157)
 how-to from the official Discourse Meta.
-
-## Usage
-
-## Feedback
-If you have issues or suggestions for the plugin, please bring them up on
-[Discourse Meta](https://meta.discourse.org).
 
 ------
 

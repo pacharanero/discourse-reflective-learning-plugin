@@ -1,5 +1,6 @@
 class ReflectionsController < ApplicationController
   def index
-    render json: { title: "reflection title", description: "reflection description" }
+    @reflections = Reflection.where(user_id: current_user.id)
+    render json: @reflections
   end
 end

@@ -3,4 +3,5 @@ en:
     reflexivity:
     user:
       reflection:
-        create_button_text: "Create Reflection"
+        create_button_text: "Create New Reflection"
+        edit_button_text: "Edit Reflection"

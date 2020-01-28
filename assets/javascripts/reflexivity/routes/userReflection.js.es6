@@ -1,8 +1,10 @@
-import { ajax } from 'discourse/lib/ajax';
-import { userPath } from 'discourse/lib/url';
+import { ajax } from 'discourse/lib/ajax'
+import { url } from "discourse/lib/computed";
+
 
 export default Ember.Route.extend({
-  model() {
-    return ajax("")
+  model () {
+    var reflections = ajax(`/u/${this.currentUser.username}/reflection/index.json`, { type: 'GET' })
+    return reflections
   }
-});
+})

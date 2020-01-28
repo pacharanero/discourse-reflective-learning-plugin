@@ -8,6 +8,7 @@ register_asset "stylesheets/common/reflexivity.scss"
 register_svg_icon "glasses" if respond_to?(:register_svg_icon)
 # register_editable_user_custom_field :enable_reflexivity
 
+# plugin site settings
 enabled_site_setting :reflexivity_enabled
 enabled_site_setting :reflexivity_extra_setting
 

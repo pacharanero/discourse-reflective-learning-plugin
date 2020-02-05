@@ -4,16 +4,16 @@ class ReflectionsController < ::ApplicationController
     reflections = (user.present? && user.reflections.any?) ? user.reflections : []
     render_serialized(reflections, ReflectionSerializer)
   end
-  
+
   def create
-    
+
   end
-  
+
   def update
-    
+
   end
-  
+
   def destroy
-    
+
   end
 end

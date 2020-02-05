@@ -20,7 +20,7 @@ Reflection.reopenClass({
       }
     }).catch(popupAjaxError)
   },
-  
+
   update(reflection) {
     return ajax(ReflectionPath, {
       method: "PUT",
@@ -29,7 +29,7 @@ Reflection.reopenClass({
       }
     }).catch(popupAjaxError)
   },
-  
+
   destroy(reflection) {
     return ajax(ReflectionPath, {
       method: "DELETE",
@@ -41,4 +41,3 @@ Reflection.reopenClass({
 });
 
 export default Reflection;
-

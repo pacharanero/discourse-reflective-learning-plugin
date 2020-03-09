@@ -1,7 +1,7 @@
 en:
   js:
-    reflexivity:
     user:
+      new_reflection: "New Reflection"
       reflection:
         create_button_text: "Create New Reflection"
         edit_button_text: "Edit Reflection"

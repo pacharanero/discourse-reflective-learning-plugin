@@ -2,7 +2,7 @@ export default {
   resource: 'user',
   map () {
     this.route(
-      'userReflection',
+      'reflection',
       { path: 'reflection', resetNamespace: true },
       function () {
         this.route('index');

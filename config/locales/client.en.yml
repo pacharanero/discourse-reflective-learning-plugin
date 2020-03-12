@@ -1,7 +1,6 @@
 en:
   js:
-    user:
+    reflexivity:
+      user_main_nav_link_title: "Reflection"
       new_reflection: "New Reflection"
-      reflection:
-        create_button_text: "Create New Reflection"
-        edit_button_text: "Edit Reflection"
+      list: "Reflections"

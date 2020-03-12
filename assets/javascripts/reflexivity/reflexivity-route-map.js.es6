@@ -3,10 +3,9 @@ export default {
   map () {
     this.route(
       'reflection',
-      { path: 'reflection', resetNamespace: true },
-      function () {
-        this.route('index');
-      }
+      // function () {
+      //   this.route('index');
+      // }
     )
   }
 }

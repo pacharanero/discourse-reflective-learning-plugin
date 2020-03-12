@@ -1,28 +1,28 @@
 {{#d-section class="user-secondary-navigation" pageClass="user-messages"}}
   {{#unless site.mobileView}}
     {{#if showNewPM}}
-      {{d-button class="btn-primary new-private-message" action=(route-action "composePrivateMessage") icon="envelope" label="user.new_reflection"}}
+      {{d-button class="btn-primary" action=(route-action "composePrivateMessage") icon="glasses" label="reflexivity.new_reflection"}}
     {{/if}}
   {{/unless}}
 
   {{#mobile-nav class='messages-nav' desktopClass='nav-stacked action-list' currentPath=currentPath}}
-    <li class="noGlyph">
+    {{!-- <li class="noGlyph">
       {{#link-to 'userPrivateMessages.index' model}}
-        {{i18n 'user.messages.inbox'}}
+        {{i18n 'reflexivity.list'}}
+      {{/link-to}}
+    </li> --}}
+    <li class="noGlyph">
+      {{#link-to 'user-reflection-sent' model}}
+        {{i18n 'reflexivity.list'}}
       {{/link-to}}
     </li>
     <li class="noGlyph">
-      {{#link-to 'userPrivateMessages.sent' model}}
-        {{i18n 'user.messages.sent'}}
-      {{/link-to}}
-    </li>
-    <li class="noGlyph">
-      {{#link-to 'userPrivateMessages.archive' model}}
+      {{#link-to 'userReflection.archive' model}}
         {{i18n 'user.messages.archive'}}
       {{/link-to}}
     </li>
-    {{plugin-outlet name="user-messages-nav" connectorTagName='li' args=(hash model=model)}}
-    {{#each model.groups as |group|}}
+    {{!-- {{plugin-outlet name="user-messages-nav" connectorTagName='li' args=(hash model=model)}} --}}
+    {{!-- {{#each model.groups as |group|}}
       {{#if group.has_messages}}
         <li>
           {{#link-to 'userPrivateMessages.group' group.name}}
@@ -36,7 +36,7 @@
           {{/link-to}}
         </li>
       {{/if}}
-    {{/each}}
+    {{/each}} --}}
 
     {{#if pmTaggingEnabled}}
       <li class="noGlyph">
@@ -59,7 +59,7 @@
 
 <div class="list-actions">
 
-    {{#unless site.mobileView}}
+    {{!-- {{#unless site.mobileView}}
       {{#if showToggleBulkSelect}}
         {{d-button
           class="btn-default bulk-select"
@@ -67,15 +67,15 @@
           title="user.messages.bulk_select"
           icon="list"}}
       {{/if}}
-    {{/unless}}
+    {{/unless}} --}}
 
     {{#if site.mobileView}}
       {{#if showNewPM}}
         {{d-button
-          class="btn-primary new-private-message"
+          class="btn-primary"
           action=(route-action "composePrivateMessage")
-          icon="envelope"
-          label="user.new_private_message"}}
+          icon="glasses"
+          label="reflexivity.new_reflection"}}
       {{/if}}
     {{/if}}
 

@@ -1,15 +1,15 @@
 <!-- Inserts Reflexivity tab into User Profile Main Nav-->
 <section class="user-primary-navigation">
-{{#mobile-nav class='main-nav' desktopClass="nav nav-pills user-nav" currentPath=currentPath}}
+  {{#mobile-nav class='main-nav' desktopClass="nav nav-pills user-nav" currentPath=currentPath}}
 
-{{#if siteSettings.reflexivity_enabled}}
-  <li>
-    {{#link-to 'reflection'}}
-    {{d-icon "glasses"}}
-    {{ "Reflection" }}
-    {{/link-to}}
-  </li>
-{{/if}}
+  {{#if siteSettings.reflexivity_enabled}}
+    <li>
+      {{#link-to 'reflection'}}
+        {{d-icon "glasses"}}
+        {{i18n 'reflexivity.user_main_nav_link_title' }}
+      {{/link-to}}
+    </li>
+  {{/if}}
 
-{{/mobile-nav}}
+  {{/mobile-nav}}
 </section>

@@ -1,4 +1,4 @@
-# name: discourse-reflexivity
+# name: discourse-reflective-learning-plugin
 # about: Reflective learning plugin for Discourse
 # version: 0.1.1
 # authors: pacharanero

@@ -1,73 +1,32 @@
 {{#d-section class="user-secondary-navigation" pageClass="user-messages"}}
   {{#unless site.mobileView}}
     {{#if showNewPM}}
-      {{d-button class="btn-primary" action=(route-action "composePrivateMessage") icon="glasses" label="reflexivity.new_reflection"}}
+      {{d-button class="btn-primary" action=(route-action "composeReflection" currentUser) icon="glasses" label="reflexivity.new_reflection"}}
     {{/if}}
   {{/unless}}
 
   {{#mobile-nav class='messages-nav' desktopClass='nav-stacked action-list' currentPath=currentPath}}
-    {{!-- <li class="noGlyph">
-      {{#link-to 'userPrivateMessages.index' model}}
-        {{i18n 'reflexivity.list'}}
-      {{/link-to}}
-    </li> --}}
     <li class="noGlyph">
-      {{#link-to 'user-reflection-sent' model}}
+      {{#link-to 'reflection.list' model}}
+        {{i18n 'user.messages.index'}}
+      {{/link-to}}
+    </li>
+    <li class="noGlyph">
+      {{#link-to 'reflection.sent' model}}
         {{i18n 'reflexivity.list'}}
       {{/link-to}}
     </li>
     <li class="noGlyph">
-      {{#link-to 'userReflection.archive' model}}
+      {{#link-to 'reflection.archive' model}}
         {{i18n 'user.messages.archive'}}
       {{/link-to}}
     </li>
-    {{!-- {{plugin-outlet name="user-messages-nav" connectorTagName='li' args=(hash model=model)}} --}}
-    {{!-- {{#each model.groups as |group|}}
-      {{#if group.has_messages}}
-        <li>
-          {{#link-to 'userPrivateMessages.group' group.name}}
-            {{d-icon "users"}}
-            {{capitalize-string group.name}}
-          {{/link-to}}
-        </li>
-        <li class='archive'>
-          {{#link-to 'userPrivateMessages.groupArchive' group.name}}
-            {{i18n 'user.messages.archive'}}
-          {{/link-to}}
-        </li>
-      {{/if}}
-    {{/each}} --}}
-
-    {{#if pmTaggingEnabled}}
-      <li class="noGlyph">
-        {{#link-to 'userPrivateMessages.tags' model}}
-          {{i18n 'user.messages.tags'}}
-        {{/link-to}}
-      </li>
-      {{#if tagId}}
-        <li class="archive">
-          {{#link-to 'userPrivateMessages.tagsShow' tagId}}
-            {{tagId}}
-          {{/link-to}}
-        </li>
-      {{/if}}
-    {{/if}}
   {{/mobile-nav}}
 {{/d-section}}
 
 <section class='user-content'>
 
 <div class="list-actions">
-
-    {{!-- {{#unless site.mobileView}}
-      {{#if showToggleBulkSelect}}
-        {{d-button
-          class="btn-default bulk-select"
-          action=(action "toggleBulkSelect")
-          title="user.messages.bulk_select"
-          icon="list"}}
-      {{/if}}
-    {{/unless}} --}}
 
     {{#if site.mobileView}}
       {{#if showNewPM}}
@@ -109,4 +68,5 @@
 </div>
 
 {{outlet}}
+
 </section>

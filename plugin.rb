@@ -19,4 +19,13 @@ after_initialize do
   # register topic custom field for a Reflection
   Topic.register_custom_field_type('reflection', :boolean)
   TopicList.preloaded_custom_fields << 'reflection' if TopicList.respond_to? :preloaded_custom_fields
+  
+  add_permitted_post_create_param(:reflection)
+  
+  on(:topic_created) do |topic, opts, user|
+    if opts[:reflection] != nil
+      topic.custom_fields['reflection'] = opts[:reflection]
+      topic.save_custom_fields(true)
+    end
+  end
 end

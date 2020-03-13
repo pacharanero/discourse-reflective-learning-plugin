@@ -1,16 +1,11 @@
 {{#d-section class="user-secondary-navigation" pageClass="user-messages"}}
+  {{!-- Create New Reflection Button (desktop) --}}
   {{#unless site.mobileView}}
-    {{#if showNewPM}}
-      {{d-button class="btn-primary" action=(route-action "composeReflection" currentUser) icon="glasses" label="reflexivity.new_reflection"}}
-    {{/if}}
+    {{d-button class="btn-primary" action=(route-action "composeReflection" currentUser) icon="glasses" label="reflexivity.new_reflection"}}
   {{/unless}}
 
+  {{!-- Reflection sidebar tabs --}}
   {{#mobile-nav class='messages-nav' desktopClass='nav-stacked action-list' currentPath=currentPath}}
-    <li class="noGlyph">
-      {{#link-to 'reflection.list' model}}
-        {{i18n 'user.messages.index'}}
-      {{/link-to}}
-    </li>
     <li class="noGlyph">
       {{#link-to 'reflection.sent' model}}
         {{i18n 'reflexivity.list'}}
@@ -22,51 +17,47 @@
       {{/link-to}}
     </li>
   {{/mobile-nav}}
+
+  {{!-- Export button --}}
+  {{d-button class="btn-secondary" label="reflexivity.export"}}
 {{/d-section}}
 
 <section class='user-content'>
+  <div class="list-actions">
 
-<div class="list-actions">
-
-    {{#if site.mobileView}}
-      {{#if showNewPM}}
-        {{d-button
-          class="btn-primary"
-          action=(route-action "composePrivateMessage")
-          icon="glasses"
-          label="reflexivity.new_reflection"}}
+      {{!-- Create New Reflection Button (mobile) --}}
+      {{#if site.mobileView}}
+        {{#if showNewPM}}
+          {{d-button
+            class="btn-primary"
+            action=(route-action "composePrivateMessage")
+            icon="glasses"
+            label="reflexivity.new_reflection"}}
+        {{/if}}
       {{/if}}
-    {{/if}}
 
-    {{#if canArchive}}
-      {{d-button
-        class="btn-default btn-archive"
-        action=(action "archive")
-        label="user.messages.move_to_archive"}}
-    {{/if}}
+      {{#if canArchive}}
+        {{d-button
+          class="btn-default btn-archive"
+          action=(action "archive")
+          label="user.messages.move_to_archive"}}
+      {{/if}}
 
-    {{#if canMoveToInbox}}
-      {{d-button
-        class="btn-default btn-to-inbox"
-        action=(action "toInbox")
-        label="user.messages.move_to_inbox"}}
-    {{/if}}
+      {{#if canMoveToInbox}}
+        {{d-button
+          class="btn-default btn-to-inbox"
+          action=(action "toInbox")
+          label="user.messages.move_to_inbox"}}
+      {{/if}}
 
-    {{#if bulkSelectEnabled}}
-      {{d-button
-        class="btn-default btn-select-all"
-        action=(action "selectAll")
-        label="user.messages.select_all"}}
-    {{/if}}
+      {{#if bulkSelectEnabled}}
+        {{d-button
+          class="btn-default btn-select-all"
+          action=(action "selectAll")
+          label="user.messages.select_all"}}
+      {{/if}}
 
-    {{#if isGroup}}
-      {{group-notifications-button
-        value=group.group_user.notification_level
-        onChange=(action "changeGroupNotificationLevel")
-      }}
-    {{/if}}
-</div>
+  </div>
 
-{{outlet}}
-
+  {{outlet}}
 </section>
